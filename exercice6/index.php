@@ -2,9 +2,13 @@
 /* variable pour remplacer automatiquement la valeur 'ex=1,2,3...' dans header.php */
 $exerciseNb = 6;
 include '../header.php';
-for ($start = 20; $start >= 0 ; $start--) {
-  echo '<br>C\'est presque bon';
+$firstName = 'Lobato Leao';
+$lastName = 'Thyago';
+$year = 20;
+function concat($firstName, $lastName, $year)
+{
+  return 'Bonjour ' .$lastName. ' ' .$firstName. ', vous avez ' .$year. ' ans.';
 }
 ?>
-<p><?= $result ?></p>
+<p><?= concat($firstName, $lastName, $year); ?></p>
 <?php include '../footer.php'; ?>

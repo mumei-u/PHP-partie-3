@@ -2,14 +2,20 @@
 /* variable pour remplacer automatiquement la valeur 'ex=1,2,3...' dans header.php */
 $exerciseNb = 4;
 include '../header.php';
-$start = 1;
-/* Tant que cette variable n'atteint pas 10 */
-while ($start <= 10) {
-  /* j'affiche premièrement le résultat */
-  echo $start;
-  /* tu affiche les résultat incrementer de la moitié de sa valeur */
-  $result = $start++/2;
+$numberOne = 10;
+$numberTwo = 5;
+function compare(int $firstval, int $secondval)
+{
+  if ($firstval > $secondval) {
+    return 'Le Premier nombre est plus grand';
+  }
+  elseif ($firstval < $secondval) {
+    return 'Le Premier nombre est plus petit';
+  }
+  else {
+    return 'Les deux nombres sont identiques';
+  }
 }
 ?>
-<p><?= $result ?></p>
+</p><?= compare($numberOne, $numberTwo); ?></p>
 <?php include '../footer.php'; ?>

@@ -2,9 +2,23 @@
 /* variable pour remplacer automatiquement la valeur 'ex=1,2,3...' dans header.php */
 $exerciseNb = 7;
 include '../header.php';
-for ($start = 1; $start <= 100; $start = $start + 15) {
-  echo '<br>On tient le bon bout';
+$gender = 'Homme';
+$age = 23;
+function genderAndAge(string $gender, int $age)
+{
+  if ($gender == 'Homme' && $age >= 18) {
+    return 'Vous etes un ' . $gender . ' majeur, vous avez ' . $age . 'ans.';
+  }
+  elseif ($gender == 'Homme') {
+    return 'Vous etes un ' . $gender . ' mineur, vous avez ' . $age . 'ans.';
+  }
+  elseif ($age >= 18) {
+    return 'Vous etes une ' . $gender . ' majeur, vous avez ' . $age . 'ans.';
+  }
+  else {
+    return 'Vous etes une ' . $gender . ' mineur, vous avez ' . $age . 'ans.';
+  }
 }
 ?>
-<p><?= $result ?></p>
+<p><?= genderAndAge($gender, $age); ?></p>
 <?php include '../footer.php'; ?>
